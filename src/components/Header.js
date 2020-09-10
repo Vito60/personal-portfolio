@@ -1,4 +1,5 @@
 import React from 'react'
+import codeIcon from '../images/codeIcon.ico'
 import {
     Typography,
     Avatar,
@@ -9,7 +10,7 @@ import {
 export default function Header() {
     return (
         <Box>
-            
+            <Avatar src={codeIcon} alt={'codeIcon'}/>
         </Box>
     )
 }
