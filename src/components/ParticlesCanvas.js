@@ -1,25 +1,21 @@
 import React from 'react'
-import NavBar from './NavBar'
-import Header from './Header'
 import Particles from 'react-particles-js'
 import {makeStyles} from '@material-ui/styles'
 
 const useStyles = makeStyles({
-    particlesCanvas: {
+    particlesCan: {
         position: 'absolute'
     }
 })
 
-export default function Home() {
+export default function ParticlesCanvas() {
 
     const classes = useStyles()
 
     return (
         <div>
-            {/* <NavBar/> */}
-            {/* <Header/> */}
             <Particles
-            canvasClassName={classes.particlesCanvas}
+            canvasClassName={classes.particlesCan}
             params={{
                 particles: {
                     number:{

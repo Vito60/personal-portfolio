@@ -35,7 +35,13 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function Header() {
+
     const classes = useStyles()
+
+    const data = {
+        name: 'Randall Williams',
+        techStack: ['React.JS', 'JavaScript', 'Redux', 'SQL', 'Ruby', 'Ruby on Rails']
+    }
 
     return (
         <Box className={classes.typedContainer}>
@@ -43,12 +49,12 @@ export default function Header() {
             <Avatar variant="square" className={classes.avatar} src={Logo} alt={'Logo'}/>
             </Grid>
             <Typography className={classes.title} variant='h4'>
-                Randall Williams
+                {data.name}
             </Typography>
             <br/>
             <Typography className={classes.subtitle} variant='h5'>
                 <Typed 
-                strings={['React.JS', 'JavaScript', 'Redux', 'SQL', 'Ruby', 'Ruby on Rails']} 
+                strings={data.techStack} 
                 typeSpeed={40} 
                 backSpeed={60}
                 loop
