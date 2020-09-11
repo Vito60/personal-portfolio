@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import codeIcon from '../images/codeIcon.ico'
+import Logo from '../images/Logo.png'
 import { makeStyles } from '@material-ui/core/styles';
 import MobileRightMenuSlider from '@material-ui/core/Drawer'
 import {
@@ -10,25 +10,29 @@ import {
     ListItemText,
     ListItemIcon,
     Avatar,
-    Divider,
     List,
     Typography,
     Box
 } from '@material-ui/core';
 import {
-    ArrowBack,
+    MenuOpen,
     AssignmentInd,
     Home,
     Apps,
     ContactMail
 } from '@material-ui/icons'
 
+import { Link } from "react-router-dom";
+
 // CSS STYLES
 const useStyles = makeStyles(theme => ({
     menuSliderContainer: {
-        width: 250,
-        background: '#511',
+        width: '100%',
+        backgroundColor: 'transparent',
         height: '100%'
+    },
+    BackdropProps: {
+        background: 'transparent'
     },
     avatar: {
         display: 'block',
@@ -44,69 +48,76 @@ const useStyles = makeStyles(theme => ({
 const menuItems = [
     {
         listIcon: <Home/>,
-        listText: "Home"
+        listText: 'Home',
+        route: '/'
     },
     {
         listIcon: <AssignmentInd/>,
-        listText: "Resume"
+        listText: 'Resume',
+        route: '/resume'
     },
     {
         listIcon: <Apps/>,
-        listText: "Portfolio"
+        listText: 'Projects',
+        route: '/projects'
     },
     {
         listIcon: <ContactMail/>,
-        listText: "Contact"
+        listText: 'Contact',
+        route: '/contact'
     }
 ]
 
 export default function NavBar() {
+
     const [state, setState] = useState({
-        right: false
+        open: false,
+        clicked: false
     })
 
-    const toggleSlider = (slider, open) => () => {
-        setState({...state, [slider]: open})
+    const toggleSlider = open => () => {
+        setState({...state, open: open, clicked: open})
     }
+    
     const classes = useStyles()
 
-    const sideList = slider => (
+    const sideList = () => (
         <Box 
         className={classes.menuSliderContainer} 
-        component="div"
-        onClick={toggleSlider('right', false)}
+        component='div'
+        onClick={toggleSlider(false)}
         >
-            <Avatar className={classes.avatar} src={codeIcon} alt="Coder Icon"/>
-            <Divider/>
+            <Avatar variant="square" className={classes.avatar} src={Logo} alt='Coder Icon'/>
             <List>
-                {menuItems.map((lsItem, key)=>(
-                        <ListItem button key={key}>
+                {menuItems.map((listItem, key)=>(
+                        <ListItem button key={key} component={Link} to={listItem.route}>
                             <ListItemIcon className={classes.listItem}>
-                                {lsItem.listIcon}
+                                {listItem.listIcon}
                             </ListItemIcon>
-                            <ListItemText className={classes.listItem} primary={lsItem.listText}/>
+                            <ListItemText className={classes.listItem} primary={listItem.listText}/>
                         </ListItem>
                 ))}
             </List>
         </Box>
     )
+
     return (
         <>
-        <Box component="nav">
-            <AppBar position="static" style={{background: '#222'}}>
+        <Box component='nav'>
+            <AppBar position='static' elevation={0} style={{background: 'transparent'}}>
                 <Toolbar>
-                    <IconButton onClick={toggleSlider('right', true)}>
-                        <ArrowBack style={{color: 'tomato'}}/>
-                    </IconButton>
-                    <Typography variant="h5" style={{color: "tan"}}>
-                        Portfolio
+                    <Typography variant='h5' style={{color: 'tan', flex: 1}}>
+                        Software Engineer
                     </Typography>
+                    <IconButton onClick={toggleSlider(true)}>
+                        <MenuOpen fontSize="large" style={{color: state.clicked? 'transparent':'tan'}}/>
+                    </IconButton>
                     <MobileRightMenuSlider
                     anchor='right'
-                    open={state.right}
-                    onClose={toggleSlider('right', false)}
+                    open={state.open}
+                    onClose={toggleSlider(false)}
                      >
-                        {sideList('right')}
+                        {sideList()}
                     </MobileRightMenuSlider>
                 </Toolbar>
             </AppBar>
