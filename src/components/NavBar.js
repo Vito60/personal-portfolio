@@ -87,7 +87,7 @@ export default function NavBar() {
         component='div'
         onClick={toggleSlider(false)}
         >
-            <Avatar variant="square" className={classes.avatar} src={Logo} alt='Coder Icon'/>
+            <Avatar variant="square" className={classes.avatar} src={Logo} alt='Logo'/>
             <List>
                 {menuItems.map((listItem, key)=>(
                         <ListItem button key={key} component={Link} to={listItem.route}>
