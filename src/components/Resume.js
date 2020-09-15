@@ -1,6 +1,5 @@
 import React from "react";
-import Pdf from "./Pdf";
-import { Box, Tooltip, IconButton } from "@material-ui/core";
+import {IconButton } from "@material-ui/core";
 import { GetApp } from "@material-ui/icons";
 import resumePdf from "../data/resume.pdf";
 import resumeImg from '../images/ResumeImage.png';
@@ -14,7 +13,6 @@ const Resume = () => {
         alignItems="center"
         justify="center"
         mt='10px'
-        // style={{ minHeight: '100vh' }}
     >
            <img src={resumeImg} width='70%' height='70%' alt="resume" />
            <IconButton size="medium" href={resumePdf}>

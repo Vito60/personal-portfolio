@@ -3,8 +3,8 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import './App.css';
 import NavBar from './components/NavBar'
 import Header from './components/Header'
-// import Resume from './components/Resume'
 import Resume from './components/Resume'
+import ProjectsGrid from './components/ProjectsGrid'
 import ParticlesCanvas from './components/ParticlesCanvas'
 import {
   Switch,
@@ -20,8 +20,8 @@ function App() {
     <Switch> 
       <Route exact path="/" component={Header}/> 
       <Route exact path="/resume" component={Resume}/>
-      {/* <Route exact path="/projects" component={}/>
-      <Route exact path="/contace" component={}/> */}
+      <Route exact path="/projects" component={ProjectsGrid}/>
+      {/* <Route exact path="/contact" component={}/> */}
     </Switch>
     </>
   );
