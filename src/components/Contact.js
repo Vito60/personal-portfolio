@@ -8,7 +8,9 @@ const useStyles = makeStyles(theme=>({
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
-        position: 'absolute'
+        position: 'absolute',
+        width: '80%',
+        height: '50%'
     },
     button: {
         marginTop: '1rem',
@@ -35,8 +37,8 @@ const InputField = withStyles({
             '&.Mui-focused fieldset': {
                 borderColor: '#ff5050'
             }
-        }
-    },
+        },
+    }
 })(TextField);
 
 export default function Contact() {
@@ -56,7 +58,7 @@ export default function Contact() {
                     <br/>
                     <InputField fullWidth={true} label='Company Name' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color: 'white'}}} />
                     <br/>
-                    <InputField fullWidth={true} label='Content' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color: 'white'}}}/>
+                    <InputField multiline rows={6} fullWidth={true} label='Content' variant='outlined' margin='dense' size='medium' inputProps={{ style:{ color: 'white' }}}/>
                     <br/>
                     <Button className={classes.button} variant='outlined' fullWidth={true} endIcon={<SendIcon/>}>
                         Send
