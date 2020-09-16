@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Logo from '../images/Logo.png'
+import Footer from './Footer'
 import { makeStyles } from '@material-ui/core/styles';
 import MobileRightMenuSlider from '@material-ui/core/Drawer'
 import {
@@ -118,6 +119,7 @@ export default function NavBar() {
                     onClose={toggleSlider(false)}
                      >
                         {sideList()}
+                        <Footer/>
                     </MobileRightMenuSlider>
                 </Toolbar>
             </AppBar>

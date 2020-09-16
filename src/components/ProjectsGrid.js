@@ -13,7 +13,7 @@ export default function ProjectsGrid() {
         >     
         {projectData.map(element => {
             return (
-                <Grid xl={6} md={6} sm={12} xs={12} item align='center'>
+                <Grid xl={4} md={4} sm={12} xs={12} item align='center'>
                 <ProjectCard data={element}/>
                 </Grid>
             )

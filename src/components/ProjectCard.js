@@ -9,7 +9,6 @@ import IconButton from '@material-ui/core/IconButton';
 import Typography from '@material-ui/core/Typography';
 import LinkIcon from '@material-ui/icons/Link';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import {Link} from 'react-router-dom'
 
 const useStyles = makeStyles((theme) => ({
   root: {

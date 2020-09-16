@@ -23,7 +23,7 @@ const projectData = [
         liveLink: '/',
         repoLink: '/',
         description: 'Built using Ruby on Rails. This application allows users to create an account to store information about their vehicles and mechanics they use for their vehicles. Utilized OMNIauth and Devise for user authentication also used Oauth2 to allow users to create an account via Facebook.'
-    }
+    },
 ]
 
 export default projectData;
