@@ -61,6 +61,7 @@ export default function Contact() {
     }
     
     const sendEmail = (variables) => {
+        console.log(NODE_ENV_SERVICE_ID, NODE_ENV_TEMPLATE_ID, variables, NODE_ENV_USER_ID)
         emailjs.send( NODE_ENV_SERVICE_ID, NODE_ENV_TEMPLATE_ID, variables, NODE_ENV_USER_ID)
         .then(res => {
             console.log('Email successfully sent!', res)
