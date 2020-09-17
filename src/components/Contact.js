@@ -50,8 +50,8 @@ export default function Contact() {
     const [email, setEmail] = useState("");
     const [content, setContent] = useState("");
     const NODE_ENV_TEMPLATE_ID = process.env.NODE_ENV_TEMPLATE_ID;
-    const NODE_ENV_SERVICE_ID = process.env.NODE_ENV_SERVICE_ID
-    const NODE_ENV_USER_ID = process.env.NODE_ENV_USER_ID
+    const NODE_ENV_SERVICE_ID = process.env.NODE_ENV_SERVICE_ID;
+    const NODE_ENV_USER_ID = process.env.NODE_ENV_USER_ID;
 
     const handleSubmit = (contentValue, nameValue, emailValue) => {
         sendEmail({message: contentValue, from_name: nameValue, reply_to: emailValue})
@@ -62,6 +62,7 @@ export default function Contact() {
     
     const sendEmail = (variables) => {
         console.log(NODE_ENV_SERVICE_ID, NODE_ENV_TEMPLATE_ID, variables, NODE_ENV_USER_ID)
+        debugger
         emailjs.send( NODE_ENV_SERVICE_ID, NODE_ENV_TEMPLATE_ID, variables, NODE_ENV_USER_ID)
         .then(res => {
             console.log('Email successfully sent!', res)
