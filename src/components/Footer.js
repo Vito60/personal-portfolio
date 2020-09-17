@@ -26,8 +26,16 @@ export default function Footer() {
 
     return (
         <BottomNavigation width='auto' style={{background: 'transparent'}}>
-            <BottomNavigationAction className={classes.root} style={{padding: 0}} icon={<GitHubIcon/>}/>
-            <BottomNavigationAction className={classes.root} style={{padding: 0}} icon={<LinkedInIcon/>}/>
+            <BottomNavigationAction className={classes.root} style={{padding: 0}} icon={
+            <a target='_blank' href='https://github.com/Vito60'>
+            <GitHubIcon/>
+            </a>
+        }/>
+            <BottomNavigationAction className={classes.root} style={{padding: 0}} icon={
+            <a target='_blank' href='https://www.linkedin.com/in/randallwilliamsdeveloper/'>
+            <LinkedInIcon/>
+            </a>
+        }/>
         </BottomNavigation>
     )
 }

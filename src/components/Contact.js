@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useState } from "react";
+import emailjs from 'emailjs-com'
 import {makeStyles, withStyles} from '@material-ui/core/styles'
 import {TextField, Typography, Button, Grid, Box} from '@material-ui/core'
 import SendIcon from '@material-ui/icons/Send'
@@ -45,6 +46,28 @@ export default function Contact() {
 
     const classes = useStyles()
 
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [content, setContent] = useState("");
+    const templateId = '';
+    const serviceId = ''
+    const userId = ''
+
+    const handleSubmit = (contentValue, nameValue, emailValue) => {
+        sendEmail({message: contentValue, from_name: nameValue, reply_to: emailValue})
+        setName('')
+        setEmail('')
+        setContent('')
+    }
+    
+    const sendEmail = (variables) => {
+        emailjs.send( serviceId, templateId, variables, userId)
+        .then(res => {
+            console.log('Email successfully sent!', res)
+          })
+          .catch(err => console.error('Oh well, you failed. Here some thoughts on the error that occured:', err))
+      }
+
     return (
         <Box component='div'>
             <Grid container justify='center'>
@@ -52,15 +75,13 @@ export default function Contact() {
                     <Typography variant='h5' style={{color: 'tan', textAlign: 'center', textTransform: 'uppercase'}}>
                         Contact
                     </Typography>
-                    <InputField fullWidth={true} label='Name' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color: 'white'}}} />
+                    <InputField required type='text' value={name} onChange={e => setName(e.target.value)} fullWidth={true} label='Name' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color: 'white'}}} />
                     <br/>
-                    <InputField fullWidth={true} label='Email' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color: 'white'}}} />
+                    <InputField required type='text' value={email} onChange={e => setEmail(e.target.value)} fullWidth={true} label='Email' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color: 'white'}}} />
                     <br/>
-                    <InputField fullWidth={true} label='Company Name' variant='outlined' margin='dense' size='medium' inputProps={{style:{ color: 'white'}}} />
+                    <InputField required type='text' value={content} onChange={e => setContent(e.target.value)} multiline rows={6} fullWidth={true} label='Content' variant='outlined' margin='dense' size='medium' inputProps={{ style:{ color: 'white' }}}/>
                     <br/>
-                    <InputField multiline rows={6} fullWidth={true} label='Content' variant='outlined' margin='dense' size='medium' inputProps={{ style:{ color: 'white' }}}/>
-                    <br/>
-                    <Button className={classes.button} variant='outlined' fullWidth={true} endIcon={<SendIcon/>}>
+                    <Button onClick={() => {handleSubmit(content, name, email)}} className={classes.button} variant='outlined' fullWidth={true} endIcon={<SendIcon/>}>
                         Send
                     </Button>
                 </Box>

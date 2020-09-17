@@ -7,22 +7,22 @@ const projectData = [
         title: 'Portfolio',
         image: portfolio,
         liveLink: 'https://www.rwilliamsportfolio.com/',
-        repoLink: 'https://github.com/Vito60/updated-portfolio',
-        description: 'An application that allows users to view and add information about professional golfers into a postgreSQL database. Client side was built with React using Redux for state management and the backend is a Rails API using a PostgreSQ. The styling was done with Material-ui.'
+        repoLink: 'https://github.com/Vito60/personal-portfolio',
+        description: 'Personal portfolio designed to showcase my skills as a developer, built using React.JS Designed mobile response experience to incorporate Material UI, which allows access to the theme values directly from the component props to consistently deliver a high-quality dynamic UI and intuitive UX.'
     },
     {
         title: 'Caddy App',
         image: caddyApp,
         liveLink: 'https://flamboyant-easley-ea72bf.netlify.app/',
         repoLink: 'https://github.com/Vito60/react-caddy-app-frontend',
-        description: 'An application that allows users to view and add information about professional golfers into a postgreSQL database. Client side was built with React using Redux for state management and the backend is a Rails API using a PostgreSQ. The styling was done with Material-ui.'
+        description: 'Built a golfer dashboard to view and add information about professional golfers. In building this web-based application, I displayed a working knowledge of React.JS, Redux, and RESTful API’s to develop frontend user experience. Developed API following RESTful standards to store data in a PostgreSQL.'
     },
     {
         title: 'Mechanic App',
         image: mechanicApp,
-        liveLink: '/',
-        repoLink: '/',
-        description: 'Built using Ruby on Rails. This application allows users to create an account to store information about their vehicles and mechanics they use for their vehicles. Utilized OMNIauth and Devise for user authentication also used Oauth2 to allow users to create an account via Facebook.'
+        liveLink: 'https://www.youtube.com/watch?v=9WozoVoxqUc',
+        repoLink: 'https://github.com/Vito60/rails-project-mechanic-app',
+        description: 'Designed for users to store information about their vehicles and the mechanics they have experience with. The application is built in a MVC style using Ruby on Rails. Utilized OMNIauth and Devise for user authentication along with OAuth2 to allow account creation via Facebook.'
     },
 ]
 
