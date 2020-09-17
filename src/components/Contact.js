@@ -49,7 +49,7 @@ export default function Contact() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [content, setContent] = useState("");
-    const templateId = '';
+    const NODE_ENV_TEMPLATE_ID = process.env.NODE_ENV_TEMPLATE_ID;
     const serviceId = ''
     const userId = ''
 
@@ -61,7 +61,7 @@ export default function Contact() {
     }
     
     const sendEmail = (variables) => {
-        emailjs.send( serviceId, templateId, variables, userId)
+        emailjs.send( serviceId, NODE_ENV_TEMPLATE_ID, variables, userId)
         .then(res => {
             console.log('Email successfully sent!', res)
           })
