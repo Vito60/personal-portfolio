@@ -49,9 +49,9 @@ export default function Contact() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [content, setContent] = useState("");
-    const templateId = 'template_c2uhj5i'; 
-    const serviceId = 'service_bqxz6o8';
-    const userId = 'user_lguYpaEGUX8VmReFRHJdr';
+    const templateId = '{process.env.NODE_ENV_TEMPLATE_ID}'; 
+    const serviceId = '{process.env.NODE_ENV_SERVICE_ID}';
+    const userId = '{process.env.NODE_ENV_USER_ID}';
 
     const handleSubmit = (contentValue, nameValue, emailValue) => {
         sendEmail({message: contentValue, from_name: nameValue, reply_to: emailValue})
