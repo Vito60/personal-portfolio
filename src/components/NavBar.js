@@ -83,11 +83,7 @@ export default function NavBar() {
     const classes = useStyles()
 
     const sideList = () => (
-        <Box 
-        className={classes.menuSliderContainer} 
-        component='div'
-        onClick={toggleSlider(false)}
-        >
+        <Box className={classes.menuSliderContainer} component='div' onClick={toggleSlider(false)}>
             <Avatar variant="square" className={classes.avatar} src={Logo} alt='Logo'/>
             <List>
                 {menuItems.map((listItem, key)=>(
@@ -113,11 +109,7 @@ export default function NavBar() {
                     <IconButton onClick={toggleSlider(true)}>
                         <MenuOpen fontSize="large" style={{color: state.clicked? 'transparent':'tan'}}/>
                     </IconButton>
-                    <MobileRightMenuSlider
-                    anchor='right'
-                    open={state.open}
-                    onClose={toggleSlider(false)}
-                     >
+                    <MobileRightMenuSlider anchor='right' open={state.open} onClose={toggleSlider(false)}>
                         {sideList()}
                         <Footer/>
                     </MobileRightMenuSlider>

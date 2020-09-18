@@ -5,7 +5,6 @@ import NavBar from './components/NavBar'
 import Header from './components/Header'
 import Resume from './components/Resume'
 import ProjectsGrid from './components/ProjectsGrid'
-import ParticlesCanvas from './components/ParticlesCanvas'
 import Contact from './components/Contact'
 import {
   Switch,
@@ -17,7 +16,6 @@ function App() {
     <>
     <CssBaseline/>
     <NavBar/>
-    <ParticlesCanvas/>
     <Switch> 
       <Route exact path="/" component={Header}/> 
       <Route exact path="/resume" component={Resume}/>

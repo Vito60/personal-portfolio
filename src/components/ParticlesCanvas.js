@@ -4,7 +4,7 @@ import {makeStyles} from '@material-ui/styles'
 
 const useStyles = makeStyles({
     particlesCan: {
-        position: 'absolute'
+        position: 'center'
     }
 })
 

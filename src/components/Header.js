@@ -1,6 +1,7 @@
 import React from 'react'
 import Logo from '../images/Logo.png'
 import Typed from 'react-typed'
+import ParticlesCanvas from './ParticlesCanvas'
 import {makeStyles} from '@material-ui/core/styles'
 import {
     Typography,
@@ -44,6 +45,8 @@ export default function Header() {
     }
 
     return (
+        <> 
+        <ParticlesCanvas/>
         <Box className={classes.typedContainer}>
             <Grid container justify="center">
             <Avatar variant="square" className={classes.avatar} src={Logo} alt={'Logo'}/>
@@ -61,5 +64,6 @@ export default function Header() {
                 />
             </Typography>
         </Box>
+        </>
     )
 }

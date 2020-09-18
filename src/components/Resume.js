@@ -7,19 +7,12 @@ import {Grid} from '@material-ui/core'
 
 const Resume = () => {
    return (
-    <Grid
-        container
-        direction="column"
-        alignItems="center"
-        justify="center"
-        mt='10px'
-    >
-           <img src={resumeImg} width='70%' height='70%' alt="resume" />
-           <IconButton size="medium" href={resumePdf}>
-                  <GetApp style={{color: 'tan'}} fontSize="large"></GetApp>
-               </IconButton>
-       </Grid>
-    
+    <Grid container direction="column" alignItems="center" justify="center" mt='10px'>
+        <img src={resumeImg} width='70%' height='70%' alt="resume" />
+        <IconButton size="medium" href={resumePdf}>
+            <GetApp style={{color: 'tan'}} fontSize="large"></GetApp>
+        </IconButton>
+    </Grid>
    );
 };
 export default Resume;
